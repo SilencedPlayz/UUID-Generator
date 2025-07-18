@@ -1,0 +1,51 @@
+    body {
+      background-color: #212121;
+      color: white;
+      font-family: "Mojangles";
+      text-align: center;
+      margin: 0;
+    }
+    @font-face {
+      font-family: 'MinecraftTen';
+      src: url('./fonts/Minecraft-Ten.otf') format('opentype')
+    }
+    @font-face {
+      font-family: 'MinecraftFive';
+      src: url('./fonts/Minecraft-Five.otf') format('opentype')
+    }
+    @font-face {
+      font-family: 'Mojangles';
+      src: url('./fonts/Mojangles.ttf') format('truetype')
+    }
+    h1 {
+      font-family: "MinecraftTen";
+    }
+    #uuid-bar {
+      background-color: #3f3f3f;
+      width: 90%;
+      height: 25px;
+      justify-self: center;
+      justify-items: center;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      border-radius: 5px;
+      padding: 10px;
+    }
+    #uuid {
+      font-family: "MinecraftFive";
+      font-size: 12px;
+      text-decoration: none;
+      text-align: center;
+      align-self: center;
+    }
+    #btns {
+      display: grid;
+      width: 200px;
+      justify-self: center;
+    }
+    .btn {
+      background-color: #2a2a2a;
+      padding: 6px;
+      color: white;
+    }
