@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Generate UUID</h1>
+  <div id="uuid-bar">
+    <span id="uuid"></span>
+  </div>
+  <br>
+  <br>
+  <div id="btns">
+    <p class="btn" id="regen" onclick="regen()">Regenerate UUID</p>
+    <span class="btn" id="copy" onclick="copy()">Copy UUID</span>
+  </div>
+</body>
+<script>
+  const uuidTxt = document.getElementById("uuid")
+  const copyBtn = document.getElementById("copy")
+  const regenBtn = document.getElementById("regen")
+  
+  uuidTxt.innerText = crypto.randomUUID()
+  let isClickable = true
+  let copied = false
+  
+  function regen(){
+    if(isClickable === true){
+      regenBtn.innerText = "Loading..."
+      regenBtn.style.color = "#676767"
+      regenBtn.disabled = true
+      isClickable = false
+      setTimeout(()=>{
+        uuidTxt.innerText = crypto.randomUUID()
+        regenBtn.innerText = "Regenerate UUID"
+        regenBtn.style.color = "white"
+        regenBtn.disabled = false
+        isClickable = true
+        
+        //to reset copy button
+        copied = false
+        copyBtn.style.color = "white"
+        copyBtn.innerText = "Copy UUID"
+      }, 500)
+    }
+  }
+  
+  function copy(){
+    if(copied == false){
+      navigator.clipboard.writeText(uuidTxt.innerText)
+      copyBtn.style.color = "#676767"
+      copyBtn.innerText = "Copied!"
+      copied = true
+    }
+  }
+</script>
